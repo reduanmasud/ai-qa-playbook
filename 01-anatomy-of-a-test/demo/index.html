@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Counter Demo</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    button { margin: 0.5rem; padding: 0.5rem 1rem; font-size: 1rem; cursor: pointer; }
+    #count { font-size: 2rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h1>Counter: <span id="count">0</span></h1>
+  <button id="increment">Increment</button>
+  <button id="reset">Reset</button>
+  <script>
+    let count = 0;
+    const display = document.getElementById('count');
+    document.getElementById('increment').addEventListener('click', function () {
+      count++;
+      display.textContent = count;
+    });
+    document.getElementById('reset').addEventListener('click', function () {
+      count = 0;
+      display.textContent = count;
+    });
+  </script>
+</body>
+</html>
