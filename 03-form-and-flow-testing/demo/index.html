@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; max-width: 400px; }
+    label { display: block; margin-top: 1rem; }
+    input { width: 100%; padding: 0.5rem; margin-top: 0.25rem; box-sizing: border-box; }
+    button { margin-top: 1rem; padding: 0.5rem 1rem; width: 100%; font-size: 1rem; cursor: pointer; }
+    #error-message { color: red; margin-top: 0.75rem; display: none; }
+  </style>
+</head>
+<body>
+  <h1>Login</h1>
+  <form id="login-form">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="you@example.com">
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Password">
+    <div id="error-message"></div>
+    <button type="submit" id="submit">Login</button>
+  </form>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const errorEl = document.getElementById('error-message');
+
+      if (!email || !password) {
+        errorEl.textContent = 'Email and password are required.';
+        errorEl.style.display = 'block';
+        return;
+      }
+      if (email !== 'admin@example.com' || password !== 'password123') {
+        errorEl.textContent = 'Invalid email or password.';
+        errorEl.style.display = 'block';
+        return;
+      }
+      window.location.href = 'dashboard.html';
+    });
+  </script>
+</body>
+</html>
