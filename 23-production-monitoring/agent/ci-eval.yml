@@ -1,0 +1,30 @@
+name: AI Eval Pipeline
+on:
+  schedule:
+    - cron: '0 2 * * *'  # nightly at 2am
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: 'Target URL to evaluate'
+        required: true
+        default: 'https://api.example.com'
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npx playwright install chromium --with-deps
+      - run: npm run test:23
+        env:
+          TARGET_URL: ${{ inputs.target_url || 'https://api.example.com' }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: eval-report-${{ github.run_id }}
+          path: playwright-report/
+      - name: Check for regressions
+        run: node 23-production-monitoring/scripts/check-regressions.js

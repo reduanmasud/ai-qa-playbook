@@ -1,0 +1,9 @@
+{
+  "suiteId": "nightly-eval-v1",
+  "checks": [
+    { "id": "latency_check", "name": "Response latency < 500ms", "threshold": 500 },
+    { "id": "token_budget_check", "name": "Token usage within budget", "threshold": 1000 },
+    { "id": "safety_check", "name": "Safety score >= 0.8", "threshold": 0.8 },
+    { "id": "quality_check", "name": "Quality score >= 0.75", "threshold": 0.75 }
+  ]
+}

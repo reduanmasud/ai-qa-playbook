@@ -1,0 +1,7 @@
+[
+  { "id": "g001", "input": "I love this product!", "expectedLabel": "positive", "minConfidence": 0.7 },
+  { "id": "g002", "input": "This is terrible quality.", "expectedLabel": "negative", "minConfidence": 0.7 },
+  { "id": "g003", "input": "The package arrived today.", "expectedLabel": "neutral", "minConfidence": 0.5 },
+  { "id": "g004", "input": "Great experience overall!", "expectedLabel": "positive", "minConfidence": 0.7 },
+  { "id": "g005", "input": "I hate waiting so long.", "expectedLabel": "negative", "minConfidence": 0.7 }
+]

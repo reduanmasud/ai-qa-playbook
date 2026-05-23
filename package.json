@@ -9,7 +9,20 @@
     "test:05": "npx playwright test --config=05-auth-and-state/playwright.config.ts",
     "test:06": "npx playwright test --config=06-data-and-fixtures/playwright.config.ts",
     "test:08": "npx playwright test --config=08-prompt-driven-testing/playwright.config.ts",
-    "test:10": "npx playwright test --config=10-infrastructure-qa/playwright.config.ts"
+    "test:10": "npx playwright test --config=10-infrastructure-qa/playwright.config.ts",
+    "test:11": "npx playwright test --config=11-llm-as-judge/playwright.config.ts",
+    "test:12": "npx playwright test --config=12-golden-datasets/playwright.config.ts",
+    "test:13": "npx playwright test --config=13-hallucination-detection/playwright.config.ts",
+    "test:14": "npx playwright test --config=14-prompt-injection-testing/playwright.config.ts",
+    "test:15": "npx playwright test --config=15-multi-turn-testing/playwright.config.ts",
+    "test:16": "npx playwright test --config=16-tool-use-validation/playwright.config.ts",
+    "test:17": "npx playwright test --config=17-behavioral-consistency/playwright.config.ts",
+    "test:18": "npx playwright test --config=18-agent-observability/playwright.config.ts",
+    "test:19": "npx playwright test --config=19-cost-and-latency-testing/playwright.config.ts",
+    "test:20": "npx playwright test --config=20-adversarial-red-teaming/playwright.config.ts",
+    "test:21": "npx playwright test --config=21-multi-agent-pipeline/playwright.config.ts",
+    "test:22": "npx playwright test --config=22-rag-evaluation/playwright.config.ts",
+    "test:23": "npx playwright test --config=23-production-monitoring/playwright.config.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",

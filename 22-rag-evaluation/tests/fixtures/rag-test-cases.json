@@ -1,0 +1,20 @@
+[
+  {
+    "id": "r001",
+    "question": "What is a JavaScript callback?",
+    "expectedDocIds": ["js-001"],
+    "groundTruth": "A callback is a function passed as argument to another function"
+  },
+  {
+    "id": "r002",
+    "question": "How do SQL JOINs work?",
+    "expectedDocIds": ["sql-001"],
+    "groundTruth": "SQL JOINs combine rows from two or more tables based on a related column"
+  },
+  {
+    "id": "r003",
+    "question": "What is Python list comprehension?",
+    "expectedDocIds": ["py-001"],
+    "groundTruth": "List comprehension provides a concise way to create lists in Python"
+  }
+]
