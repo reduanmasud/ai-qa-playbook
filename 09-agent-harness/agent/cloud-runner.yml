@@ -1,0 +1,49 @@
+name: QA Agent — Cloud Run
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: 'URL to test (e.g. https://mysite.com/shop/)'
+        required: true
+      spec_file:
+        description: 'Spec file path (relative to repo root)'
+        required: true
+        default: '08-prompt-driven-testing/prompts/spec.md'
+
+jobs:
+  qa-cloud-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Run QA agent tests
+        env:
+          TEST_URL: ${{ inputs.target_url }}
+        run: |
+          echo "Running QA against: $TEST_URL"
+          echo "Using spec: ${{ inputs.spec_file }}"
+          TEST_URL=$TEST_URL npx playwright test \
+            --config=08-prompt-driven-testing/playwright.config.ts \
+            --reporter=list,json
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qa-cloud-results-${{ github.run_id }}
+          path: |
+            08-prompt-driven-testing/playwright-report/
+          retention-days: 7
