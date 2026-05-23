@@ -7,7 +7,8 @@
     "test:03": "npx playwright test --config=03-form-and-flow-testing/playwright.config.ts",
     "test:04": "npx playwright test --config=04-api-testing/playwright.config.ts",
     "test:05": "npx playwright test --config=05-auth-and-state/playwright.config.ts",
-    "test:06": "npx playwright test --config=06-data-and-fixtures/playwright.config.ts"
+    "test:06": "npx playwright test --config=06-data-and-fixtures/playwright.config.ts",
+    "test:08": "npx playwright test --config=08-prompt-driven-testing/playwright.config.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
