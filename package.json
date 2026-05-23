@@ -1,0 +1,20 @@
+{
+  "name": "qa-curriculum",
+  "private": true,
+  "scripts": {
+    "test:01": "npx playwright test --config=01-anatomy-of-a-test/playwright.config.ts",
+    "test:02": "npx playwright test --config=02-page-testing/playwright.config.ts",
+    "test:03": "npx playwright test --config=03-form-and-flow-testing/playwright.config.ts",
+    "test:04": "npx playwright test --config=04-api-testing/playwright.config.ts",
+    "test:05": "npx playwright test --config=05-auth-and-state/playwright.config.ts",
+    "test:06": "npx playwright test --config=06-data-and-fixtures/playwright.config.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
